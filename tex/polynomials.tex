@@ -1,0 +1,43 @@
+\section{ Polynomials. }
+
+\subsection{ Notation. }
+
+Polynomials are given in two isomorphic shapes, for which we use a shorthand notation.  A sum is
+written thus:
+$$ \sum_{0}^{p} a_i x^{p - i} = \f{p}{a_0, a_1, \dots, a_m} $$
+--- And a product thus:
+$$ a_0\prod_{1}^{p} (x - x_i) = \poly {a_0} { x_0^{p_1}, \dots, x_n^{p_n} } $$
+\itbr{Here, $n$ --- number of unique roots, $p = \sum{}{} p_i$ --- degree of the polynomial in
+question, $p_i$ --- multiplicity of $i$th root.}
+
+Though isomorphic, these forms are not on par with regard to information content: from a
+$\poly{}{\dots}$ we may always obtain the corresponding $\f{}{\dots}$, but not necessarily the
+other way around.
+
+\subsection{ Ring operations. }
+
+\begin{description}
+
+    \item [Addition] You can sum polynomials as usual numbers in a positional number system
+        \itbr{with the power of the variable being the position} except that you never carry. It
+        is an unfortunate fact that $\poly{}{}$ has to be converted to $\f{}{}$ in the process and
+        the information about roots lost --- the same as prime factorization is lost with the
+        usual addition of integers.
+
+        The degree of the resulting polynomial is the maximum of the degrees of the summands,
+        unless a run of coefficients from $a_0$ to $a_q$ happen to each sum to zero, in which case
+        it is reduced by $q + 1$.
+
+    \item [Additive inverse] You can invert any polynomial by inverting every single value
+        throughout $\f{}{}$ or by inverting $a_0$ in $\poly{a_0}{}$.
+        
+        The degree is invariant with regard to this operation.
+
+    \item [Multiplication] The union of the multisets of the roots given by $\poly{}{}$ is the
+        fast way to obtain the product of the corresponding polynomials. The usual positional
+        multiplication, performed without carry, as in addition explained above, takes more
+        effort.
+
+        The degree of the resulting polynomial is the sum of the degrees of the multiples.
+
+\end{description}

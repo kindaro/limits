@@ -1,0 +1,18 @@
+\ProvidesPackage{lib}
+
+\usepackage{mathtools}
+\usepackage{etoolbox}
+
+\newcommand{\itbr}[1]{{\small(#1)}}
+
+\newcommand{\f}[2]                          %
+    { \ifstrempty{#1}{}{\prescript{#1}{}\!} %
+      \text{\large $f$}                     %
+      \ifstrempty{#2}{}{\{{}#2\}}           %
+    }
+
+\newcommand{\poly}[2]              %
+    { \ifstrempty{#1}{}{#1}        %
+      \operatorname{poly}          %
+      \ifstrempty{#2}{}{\{{} #2\}} %
+    }
